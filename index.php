@@ -24,7 +24,7 @@
 </style>
 
 <?php
-<<<<<<< HEAD
+
 
 class Product {
     public $immagine;
@@ -113,13 +113,3 @@ $products = [
     </div>
 </body>
 </html>
-
-
-
-=======
-echo "hello world";
-echo "<br>";
-echo "hello world";
-echo "prova da seconda repo";
-?>
->>>>>>> 35f76fef4f5c2bb98e13f31c1772571f68274fd2
