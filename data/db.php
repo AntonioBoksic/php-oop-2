@@ -5,9 +5,20 @@ require_once("./models/Product.php");
 require_once("./models/Food.php");
 require_once("./models/Toy.php");
 
+// test per vedere se funziona exception
+try{
+    $testException = new AnimalCategory("","<i class='fa-solid fa-dog'></i>");
+    } 
+catch (Exception $e) {
+echo "Errore : " . $e -> getMessage();
+}
+
+
+
 // prove AnimalCategory
 $categoriaCane = new AnimalCategory("cane","<i class='fa-solid fa-dog'></i>");
 $categoriaGatto = new AnimalCategory("gatto", "<i class='fa-solid fa-cat'></i>");
+echo "<br>-------------<br>";
 var_dump($categoriaCane);
 echo "<br>-------------<br>";
 var_dump($categoriaGatto);
