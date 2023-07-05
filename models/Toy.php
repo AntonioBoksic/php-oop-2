@@ -1,13 +1,33 @@
 <?php
+
+trait Shipping {
+    public $shippingDays;
+
+    public function getShippingDays() {
+        return $this -> shippingDays;
+
+    }
+
+    public function setShippingDays($shippingDays) {
+        $this -> shippingDays = $shippingDays;
+
+    }
+}
 class Toy extends Product {
+
+    use Shipping;
+
     public $color;
 
     public function __construct($image, $name, $price, AnimalCategory $animalCategory, 
-                                $color){
+                                $color,
+                                $shippingDays    ){
 
         parent :: __construct($image, $name, $price, $animalCategory);
         
         $this -> setColor($color);
+
+        $this -> setShippingDays($shippingDays); 
         
     }
 

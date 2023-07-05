@@ -8,6 +8,11 @@
 
     <!-- cdn fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <?php
+        require_once("./data/db.php");
+    ?>  
 </head>
 
 <style>
@@ -23,11 +28,6 @@
 
 </style>
 
-<?php
-require_once("./data/db.php");
-?>
-
-<!-- BODY -->
 <body>
     <div class="container">
 
@@ -36,9 +36,6 @@ require_once("./data/db.php");
         
         foreach ($products as $product) {
 
-
-        
-        
         echo "<div class='card'>";
 
             // immagine prodotto
@@ -46,7 +43,6 @@ require_once("./data/db.php");
                 // "<img src= '$product -> immagine' >" .
                 "</div>";
 
-             
             // <!-- titolo prodotto -->
             echo"<h1>" . 
                 $product -> name . 
@@ -67,10 +63,7 @@ require_once("./data/db.php");
                     $product ->  animalCategory -> icon .
                 "</div>";
             
-            
-
         echo "</div>";
-
         };
         ?>
     </div>

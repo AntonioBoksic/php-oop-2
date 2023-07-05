@@ -23,14 +23,16 @@ echo "<br>-------------<br>";
 var_dump($f1);
 
 //prove Toy
-$toy1 = new Toy("immagine", "pallina indistruttibile", 9.55, $categoriaCane, "Red");
+//QUA UTILIZZO UN TRAIT ED è PER QUESTO CHE HO UN PARAMETRO PER IL CONSTRUCTOR IN PIù
+$toy1 = new Toy("immagine", "pallina indistruttibile", 9.55, $categoriaCane, "Red", "10 giorni");
 echo "<br>-------------<br>";
 var_dump($toy1);
-echo "questo era il TOY";
+echo "<br>";
+echo "questo è il TOY con il trait shippingDays";
 
 // ARRAY DI PRODOTTI DA STAMPARE IN PAGINA
 $products = [
     new Food("immagine", "Crocchette Delicious", 14.99, $categoriaGatto, "dataRandom"),
-    new Toy("immagine", "Pallina indistruttibile", 9.55, $categoriaCane, "Red"),
+    new Toy("immagine", "Pallina indistruttibile", 9.55, $categoriaCane, "Red", "10 giorni"),
     
 ];
