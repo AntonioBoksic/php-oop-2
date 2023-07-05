@@ -24,44 +24,10 @@
 </style>
 
 <?php
-
-
-class Product {
-    public $immagine;
-    public $titolo;
-    public $prezzo;
-    public $iconaCategoria;
-    public $tipoArticolo;
-    public $tipoAnimale;
-
-    public function __construct($immagine, $titolo, $prezzo, $iconaCategoria, $tipoArticolo, $tipoAnimale) {
-
-        $this -> immagine = $immagine;
-        $this -> titolo = $titolo;
-        $this -> prezzo = $prezzo;
-        $this -> iconaCategoria = $iconaCategoria;
-        $this -> tipoArticolo = $tipoArticolo;
-        $this -> tipoAnimale = $tipoAnimale;
-
-    }
-}
-
-
-
-$products = [
-    new Product("immagine", "Crocchette Delicious", 14.99, "<i class='fa-solid fa-cat'></i>", "Cibo", "Gatto"),
-    new Product("immagine", "Cuccia XL", 47.20, "<i class='fa-solid fa-dog'></i>", "Cuccia", "Cane"),
-    new Product("immagine", "Pallina indistruttibile", 8.99, "<i class='fa-solid fa-dog'></i>", "Gioco", "Cane"),
-    
-];
-
-
-// echo "<br>";
-// var_dump($products);
-
+require_once("./data/db.php");
 ?>
 
-
+<!-- BODY -->
 <body>
     <div class="container">
 
@@ -76,40 +42,37 @@ $products = [
         echo "<div class='card'>";
 
             // immagine prodotto
-            echo"<div>" . $product -> immagine .
+            echo"<div>" . $product ->  image .
                 // "<img src= '$product -> immagine' >" .
                 "</div>";
 
              
             // <!-- titolo prodotto -->
             echo"<h1>" . 
-                $product -> titolo . 
+                $product -> name . 
                 "</h1>";
 
             // prezzo prodotto
             echo"<div>" .
-                    $product -> prezzo . "$" .
+                    $product -> price . "$" .
                 "</div>";
 
-            // icona prodotto
+            // nome categoria animale
             echo"<div>" .
-                    $product -> iconaCategoria .
+                    $product -> animalCategory -> name .
                 "</div>";
 
-            // itipo articolo
+            // icona categoria animale
             echo"<div>" .
-                    $product -> tipoArticolo .
+                    $product ->  animalCategory -> icon .
                 "</div>";
             
             
 
         echo "</div>";
 
-       
-
         };
         ?>
-
     </div>
 </body>
 </html>
